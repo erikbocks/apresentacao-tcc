@@ -295,9 +295,17 @@
 
         .reveal .evidencias img {
             margin: 0;
-            max-height: 300px;
             width: 100%;
-            object-fit: contain;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+
+        .evidencias figcaption {
+            font-size: 0.6em;
+        }
+
+        .print-pdf .ifsc-decor:not(.ifsc-decor-pdf) {
+            display: none;
         }
 
         .img-pendente {
@@ -338,9 +346,8 @@
                 </p>
             </section>
 
-            <!-- 2. Contexto -->
             <section>
-                <h2>Contexto</h2>
+                <h2>Recapitulando...</h2>
                 <ul>
                     <li><strong>Apache CloudStack (ACS)</strong>: plataforma de código aberto para orquestrar nuvens de
                         infraestrutura.</li>
@@ -367,7 +374,7 @@
                         são efêmeras.</li>
                     <li class="fragment">A alternativa <code>extra config</code> foi desativada pela vulnerabilidade
                         CVE-2024-29008.</li>
-                    <li class="fragment">Sem controle central: não há autosserviço para o usuário, e migração, alta
+                    <li class="fragment">Sem controle central não há autosserviço para o usuário, e migração, alta
                         disponibilidade (HA) e manutenção não reconhecem o vínculo com o hardware.</li>
                 </ul>
             </section>
@@ -393,7 +400,7 @@
                             <th>Solução</th>
                             <th>Dispositivos</th>
                             <th>Descoberta</th>
-                            <th>Como o usuário pede</th>
+                            <th>Meio de consumo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -594,18 +601,23 @@
                             <li>Limites e tarifação funcionando</li>
                         </ul>
                     </div>
-                    <div class="evidencias" style="flex-direction:column; flex:0 0 46%;">
-                        <figure>
-                            <img src="img/fig-host-devices.png" alt="Tela Host devices management com a GPU alocada"
-                                onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-host-devices.png'}))">
-                            <figcaption>Tela de dispositivos com a GPU alocada a uma VM</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="img/fig-lspci-vm.png" alt="Dispositivos PCI vistos pela VM (lspci)"
-                                onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-lspci-vm.png'}))">
-                            <figcaption>Dispositivos PCI vistos de dentro da VM (<code>lspci -nn</code>)</figcaption>
-                        </figure>
-                    </div>
+                </div>
+            </section>
+
+            <!-- 15. Evidências -->
+            <section>
+                <h2>Evidências: a GPU chegando à VM</h2>
+                <div class="evidencias">
+                    <figure>
+                        <img src="img/fig-host-devices.png" alt="Tela Host devices management com a GPU alocada"
+                            onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-host-devices.png'}))">
+                        <figcaption>Tela de dispositivos do ACS: a GPU alocada a uma VM</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/fig-lspci-vm.png" alt="Dispositivos PCI vistos pela VM (lspci)"
+                            onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-lspci-vm.png'}))">
+                        <figcaption>Dispositivos PCI vistos de dentro da VM (<code>lspci -nn</code>)</figcaption>
+                    </figure>
                 </div>
             </section>
 
@@ -679,7 +691,7 @@
                 <h1>Obrigado!</h1>
                 <p>Dúvidas?</p>
                 <br>
-                <p><small>Erik Böck da Silva</small></p>
+                <p><small>Erik Böck da Silva<br>erik.bock@outlook.com</small></p>
                 <div style="margin-top: 50px;">
                     <p style="font-size: 0.8em; color: var(--if-green); font-weight: bold;">Instituto Federal de Santa
                         Catarina</p>
@@ -704,6 +716,7 @@
             width: 1280,
             height: 720,
             margin: 0.04,
+            pdfSeparateFragments: false, // no PDF, cada slide sai uma vez, com os fragmentos visíveis
             plugins: [RevealZoom]
         }).then(() => {
             const progressDecor = document.querySelector('.ifsc-decor');
@@ -715,6 +728,20 @@
             updateProgress();
             Reveal.addEventListener('slidechanged', updateProgress);
         });
+
+        // No PDF (?print-pdf) a barra fixa não acompanha os slides: cada página recebe a sua, com o progresso dela
+        function addPdfBars() {
+            const pages = document.querySelectorAll('.pdf-page');
+            pages.forEach((page, i) => {
+                if (page.querySelector('.ifsc-decor-pdf')) return;
+                const bar = document.createElement('div');
+                bar.className = 'ifsc-decor ifsc-decor-pdf';
+                bar.style.position = 'absolute';
+                bar.style.setProperty('--progress', `${pages.length > 1 ? (i / (pages.length - 1)) * 100 : 0}%`);
+                page.appendChild(bar);
+            });
+        }
+        Reveal.on('pdf-ready', addPdfBars);
     </script>
 </body>
 
