@@ -352,7 +352,7 @@
             </section>
 
             <section>
-                <h2>Recapitulando...</h2>
+                <h2>Conceitos abordados</h2>
                 <ul>
                     <li><strong>Apache CloudStack (ACS)</strong>: plataforma de código aberto para orquestrar nuvens de
                         infraestrutura.</li>
@@ -363,7 +363,7 @@
                         físico diretamente, em vez de um dispositivo emulado.</li>
                 </ul>
                 <div class="box-destaque fragment">
-                    Quem precisa disso? Cargas de trabalho que exigem hardware dedicado, como processamento em GPU e
+                    Quem se beneficia do repasse de dispositivo? cargas de trabalho que exigem hardware dedicado, como processamento em GPU e
                     armazenamento de alto desempenho.
                 </div>
             </section>
@@ -371,14 +371,13 @@
             <section>
                 <h2>O problema</h2>
                 <ul>
-                    <li class="fragment">Sem suporte nativo no ACS, exceto para GPUs (desde a versão 4.21).</li>
-                    <li class="fragment">O repasse é <strong>manual</strong>: o operador edita a definição XML da VM no
+                    <li class="fragment">Sem o repasse nativo de dispositivos PCI no ACS, exceto para GPUs (desde a versão 4.21).</li>
+                    <li class="fragment">O operador precisa editar <strong>manualmente</strong> a definição XML da VM no
                         libvirt, servidor por servidor.</li>
-                    <li class="fragment">A configuração <strong>se perde</strong> a cada reinício, porque as VMs do ACS
-                        são efêmeras.</li>
+                    <li class="fragment">A definição XML da VM não é <strong>persistente</strong>, porque as VMs criadas pelo ACS são efêmeras.</li>
                     <li class="fragment">A alternativa <code>extra config</code> foi desativada pela vulnerabilidade
                         CVE-2024-29008.</li>
-                    <li class="fragment">Sem controle central não há autosserviço para o usuário, e migração, alta
+                    <li class="fragment">Sem controle central não há autosserviço para o usuário e operações como migração, alta
                         disponibilidade (HA) e manutenção não reconhecem o vínculo com o hardware.</li>
                 </ul>
             </section>
@@ -395,7 +394,7 @@
             </section>
 
             <section>
-                <h2>Trabalhos relacionados</h2>
+                <h2>Implementações relacionadas</h2>
                 <table class="tab">
                     <thead>
                         <tr>
@@ -420,7 +419,7 @@
                         </tr>
                         <tr>
                             <td>OpenStack Cyborg</td>
-                            <td>Aceleradores</td>
+                            <td>Qualquer PCI (Aceleradores)</td>
                             <td>Por <em>drivers</em></td>
                             <td>Perfil no <em>flavor</em></td>
                         </tr>
@@ -439,7 +438,7 @@
                         <tr class="nosso">
                             <td>Este trabalho</td>
                             <td>Qualquer PCI</td>
-                            <td>Sob demanda ou agendada</td>
+                            <td>Sob demanda e periódica</td>
                             <td>Oferta de dispositivo (<em>tag</em> + quantidade)</td>
                         </tr>
                     </tbody>
@@ -492,7 +491,7 @@
                 <ul style="font-size:0.85em; margin-top:24px;">
                     <li class="fragment">Interface gráfica para visualizar dispositivos e gerenciar ofertas</li>
                     <li class="fragment">Limites por conta, domínio e projeto, e alertas aos operadores</li>
-                    <li class="fragment">Descoberta automática dos dispositivos, manual ou agendada por cluster</li>
+                    <li class="fragment">Descoberta automática dos dispositivos, manual e periódica por cluster</li>
                 </ul>
             </section>
 
@@ -511,12 +510,12 @@
                 <div class="grid c2">
                     <div class="card fragment">
                         <h4>Desabilitado por padrão</h4>
-                        <p>Todo dispositivo mapeado entra como <code>Disabled</code>. Isso evita alocar por engano
+                        <p>Todo dispositivo é mapeado inicialmente como <code>Disabled</code>. Isso evita alocar por engano
                             itens críticos do servidor.</p>
                     </div>
                     <div class="card fragment">
                         <h4>Reservado enquanto a VM existe</h4>
-                        <p>O dispositivo fica com a VM mesmo parada. Garante a disponibilidade, mas prende a VM ao
+                        <p>O dispositivo permanece alocado à VM mesmo com ela parada. Isso garante a disponibilidade, mas prende a VM ao
                             servidor.</p>
                     </div>
                     <div class="card fragment">
@@ -526,7 +525,7 @@
                     </div>
                     <div class="card fragment">
                         <h4>Dispositivos de uso único</h4>
-                        <p>Armazenamento pode reter dados. Ao ser liberado, o dispositivo fica em
+                        <p>Dispositivos de armazenamento podem reter dados após a liberação. Ao ser liberado, o dispositivo fica em
                             <code>NeedsCleanup</code> até o operador limpar.</p>
                     </div>
                 </div>
@@ -588,7 +587,7 @@
                                 remover a oferta ou destruir a VM</li>
                             <li>Utilização da <i>flag</i> de uso único (estado <code>NeedsCleanup</code>) e seus alertas</li>
                             <li>Operações incompatíveis <strong>bloqueadas</strong> corretamente</li>
-                            <li>Limitações e tarifação funcionando</li>
+                            <li>Limitações de recursos (PCIs) e tarifação funcionando</li>
                         </ul>
                     </div>
                 </div>
@@ -635,7 +634,7 @@
                     <div class="card">
                         <span class="numero">0</span>
                         <p><strong>alocações duplicadas</strong> em 10 rodadas de início simultâneo disputando a única
-                            GPU.</p>
+                            GPU. O controle de alocação foi feito pelo ACS</p>
                     </div>
                     <div class="card">
                         <span class="numero">&#10003;</span>
@@ -649,42 +648,37 @@
 
             
             <section>
-                <h2>Limitações e trabalhos futuros</h2>
-                <div class="duas-colunas">
-                    <div>
-                        <h3>Limitações da validação</h3>
+                <h2>Limitações da validação</h2>
+                    <ul>
+                        <li>Um só servidor com dispositivos repassáveis (1 GPU, 1 NVMe)</li>
+                        <li>Não foram realizados testes extensivos em todas as funcionalidades implementadas</li>
+                        <li>Placas de rede e USB sem repasse efetivo; NVMe só com leitura</li>
+                    </ul>
+            </section>
+            <section>
+                    <h2>Trabalhos futuros</h2>
                         <ul>
-                            <li>Um só servidor com dispositivos repassáveis (1 GPU, 1 NVMe)</li>
-                            <li>Não validados: HA, <em>Rolling Maintenance</em> e balanceamento dinâmico de recursos
-                                (DRS), embora implementados</li>
-                            <li>Placas de rede e USB sem repasse efetivo; NVMe só com leitura</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Trabalhos futuros</h3>
-                        <ul>
-                            <li>Ambiente com vários servidores e dispositivos por <em>tag</em></li>
-                            <li>Outros tipos de dispositivo e medição de desempenho</li>
-                            <li>Validação automática do IOMMU</li>
-                            <li>Dispositivos mediados e SR-IOV</li>
-                            <li>Migração, HA e atribuição a quente</li>
+                            <li>Validar dispositivos de rede e USB</li>
+                            <li>Validar a solução em ambientes produtivos</li>
+                            <li>Executar validações extensivas com todas as funcionalidades implementada</li>
+                            <li>Implementar validação de grupos IOMMU de dispositivos</li>
+                            <li>Implementar suporte a dispositivos mediados e SR-IOV</li>
+                            <li>Implementar atribuição a quente (hotplug) de dispositivos em VMs</li>
                             <li>Enviar o código ao repositório oficial do ACS</li>
                         </ul>
-                    </div>
-                </div>
             </section>
 
             
             <section>
                 <h2>Conclusão</h2>
-                <p>A automatização do gerenciamento de dispositivos PCI melhora a operação e o provisionamento no
-                    Apache CloudStack</p>
-                <ul>
-                    <li class="fragment">elimina a configuração manual a cada início da VM</li>
-                    <li class="fragment">centraliza o controle da alocação</li>
-                    <li class="fragment">impede a alocação duplicada</li>
-                    <li class="fragment">permite tarifar os dispositivos</li>
-                </ul>
+                <div>
+                    <ul>
+                        <li class="fragment">elimina a configuração manual a cada início da VM</li>
+                        <li class="fragment">centraliza o controle da alocação</li>
+                        <li class="fragment">impede a alocação duplicada</li>
+                        <li class="fragment">permite tarifar os dispositivos</li>
+                    </ul>
+                </div>
                 <small class="nota fragment">Conclusão limitada ao ambiente em que a solução foi validada.</small>
             </section>
 
