@@ -304,6 +304,12 @@
             font-size: 0.6em;
         }
 
+        .evidencia-fullscreen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .print-pdf .ifsc-decor:not(.ifsc-decor-pdf) {
             display: none;
         }
@@ -327,7 +333,6 @@
     <div class="reveal">
         <div class="slides">
 
-            <!-- 1. Capa -->
             <section class="centro">
                 <div style="display:flex; justify-content:center; align-items:center; margin-bottom:10px;">
                     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Instituto_Federal_de_Santa_Catarina_-_Marca_Vertical_2015.svg"
@@ -363,7 +368,6 @@
                 </div>
             </section>
 
-            <!-- 3. Problema -->
             <section>
                 <h2>O problema</h2>
                 <ul>
@@ -379,7 +383,6 @@
                 </ul>
             </section>
 
-            <!-- 4. Pergunta e objetivo -->
             <section>
                 <h2>Pergunta e objetivo</h2>
                 <div class="box-destaque" style="font-size:0.95em;">
@@ -391,7 +394,6 @@
                         dispositivo</em> (<em>device offerings</em>) integradas ao ciclo de vida das VMs.</p>
             </section>
 
-            <!-- 5. Trabalhos relacionados -->
             <section>
                 <h2>Trabalhos relacionados</h2>
                 <table class="tab">
@@ -446,7 +448,6 @@
                     acadêmicos nacionais sobre o tema em orquestradores de nuvem.</small>
             </section>
 
-            <!-- 6. Metodologia -->
             <section>
                 <h2>Metodologia</h2>
                 <p><strong>Design Science Research (DSR)</strong>, pesquisa orientada à criação e avaliação de um
@@ -465,13 +466,11 @@
                 </div>
             </section>
 
-            <!-- 7. Visão geral da solução -->
             <section>
                 <img class="diagrama r-stretch" src="img/visao-geral-solucao.svg" width="1202" height="700"
                     alt="Visão geral da solução">
             </section>
 
-            <!-- 8. O que foi criado -->
             <section>
                 <h2>O que foi criado</h2>
                 <div class="grid c3">
@@ -497,19 +496,16 @@
                 </ul>
             </section>
 
-            <!-- 9. Ciclo de vida do dispositivo -->
             <section>
                 <img class="diagrama r-stretch" src="img/ciclo-de-vida-dispositivo.svg" width="1228" height="691"
                     alt="Ciclo de vida do dispositivo PCI">
             </section>
 
-            <!-- 10. Integração com o ciclo de vida -->
             <section>
                 <img class="diagrama r-stretch" src="img/integracao-ciclo-de-vida.svg" width="1200" height="713"
                     alt="Integração com o ciclo de vida das VMs e da infraestrutura">
             </section>
 
-            <!-- 11. Decisões de projeto -->
             <section>
                 <h2>Decisões de projeto</h2>
                 <div class="grid c2">
@@ -537,42 +533,37 @@
                 <small class="nota">As demais decisões estão na seção 5.7 do TCC.</small>
             </section>
 
-            <!-- 12. Ambiente de testes -->
             <section>
                 <h2>Ambiente de testes</h2>
                 <div class="grid c2">
                     <div class="card">
                         <h4>Notebook (Dell XPS 9310)</h4>
                         <p>Core i7-1185G7, 16 GB, Ubuntu 24.04<br>
-                            <strong>Apache CloudStack 4.23</strong> modificado: Management Server, MariaDB e um Agent
-                            KVM</p>
+                            Ambiente <strong>Apache CloudStack 4.23</strong>: Management Server, MariaDB e Agent KVM</p>
                     </div>
                     <div class="card">
                         <h4>Computador pessoal</h4>
                         <p>Ryzen 5 4500, 16 GB, Ubuntu 24.04<br>
-                            Agent KVM com <strong>GPU GTX 1060 6 GB</strong> e <strong>NVMe Kingston 240 GB</strong>
-                            (<em>driver</em> <code>vfio-pci</code>)</p>
+                            Agent KVM com <strong>GPU GTX 1060 6 GB</strong> e <strong>NVMe Kingston 240 GB</strong></p>
                     </div>
                 </div>
                 <p style="font-size:0.8em; margin-top:24px;">Contas dos tipos Root Admin, Domain Admin e usuário comum,
                     em domínios distintos, para testar visibilidade e controle de acesso.</p>
             </section>
 
-            <!-- 13. Metodologia dos testes -->
             <section>
-                <h2>Como os testes foram feitos</h2>
+                <h2>Casos de teste e evidências coletadas</h2>
                 <div class="duas-colunas">
                     <div>
                         <ul>
                             <li><strong>SD</strong>: cenários <em>sem</em> dispositivo repassável (dispositivos
                                 emulados pelo QEMU)</li>
-                            <li><strong>CD</strong>: cenários <em>com</em> repasse efetivo (GPU e NVMe)</li>
+                            <li><strong>CD</strong>: cenários <em>com</em> dispositivo repassável e com repasse efetivo (GPU e NVMe)</li>
                             <li>Cada cenário tem um <strong>resultado esperado</strong>, definido na especificação, e é
                                 classificado como conforme ou não conforme.</li>
                         </ul>
                     </div>
                     <div>
-                        <h3>Evidências coletadas</h3>
                         <ul>
                             <li>Respostas das APIs e mensagens de erro</li>
                             <li>XML da VM (<code>virsh dumpxml</code>)</li>
@@ -584,34 +575,32 @@
                 </div>
             </section>
 
-            <!-- 14. Resultados -->
             <section>
                 <h2>Resultados</h2>
                 <div class="duas-colunas">
                     <div>
                         <ul>
                             <li><strong>Sem repasse:</strong> 29 cenários via API, 23 conformes de primeira e 5 após
-                                correções de mensagens e de um efeito colateral. O restante foi concluído nos testes
+                                correções de mensagens e de um efeito colateral. O caso de teste SD foi concluído nos testes
                                 com repasse.</li>
-                            <li><strong>GPU e NVMe</strong> entregues às VMs, visíveis no <code>lspci</code></li>
+                            <li><strong>GPU e NVMe</strong> repassados com sucesso às VMs, visíveis no <code>lspci</code></li>
                             <li>Dispositivo <strong>retido</strong> com a VM parada e <strong>liberado</strong> ao
                                 remover a oferta ou destruir a VM</li>
-                            <li>Uso único em <code>NeedsCleanup</code> com alertas; operações incompatíveis
-                                <strong>bloqueadas</strong></li>
-                            <li>Limites e tarifação funcionando</li>
+                            <li>Utilização da <i>flag</i> de uso único (estado <code>NeedsCleanup</code>) e seus alertas</li>
+                            <li>Operações incompatíveis <strong>bloqueadas</strong> corretamente</li>
+                            <li>Limitações e tarifação funcionando</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- 15. Evidências -->
             <section>
-                <h2>Evidências: a GPU chegando à VM</h2>
+                <h2>Evidências do repasse   </h2>
                 <div class="evidencias">
                     <figure>
                         <img src="img/fig-host-devices.png" alt="Tela Host devices management com a GPU alocada"
                             onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-host-devices.png'}))">
-                        <figcaption>Tela de dispositivos do ACS: a GPU alocada a uma VM</figcaption>
+                        <figcaption>Tela de dispositivos do ACS - GPU alocada a uma VM</figcaption>
                     </figure>
                     <figure>
                         <img src="img/fig-lspci-vm.png" alt="Dispositivos PCI vistos pela VM (lspci)"
@@ -621,9 +610,22 @@
                 </div>
             </section>
 
-            <!-- 15. Indicadores de Gestão de TI -->
             <section>
-                <h2>Sob a ótica da Gestão de TI</h2>
+                <div class="evidencia-fullscreen">
+                    <img src="img/fig-host-devices.png" alt="Tela Host devices management com a GPU alocada" width="1080" height="681"
+                    onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-host-devices.png'}))">
+                </div>
+            </section>
+
+            <section>
+                <div class="evidencia-fullscreen">
+                    <img src="img/fig-lspci-vm.png" alt="Tela Host devices management com a GPU alocada" width="1080" height="681"
+                    onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-host-devices.png'}))">
+                </div>
+            </section>
+
+            <section>
+                <h2>Análise dos resultados</h2>
                 <div class="grid c3">
                     <div class="card">
                         <span class="numero">4 &#10140; 1</span>
@@ -645,7 +647,7 @@
                     laboratório.</small>
             </section>
 
-            <!-- 16. Limitações e trabalhos futuros -->
+            
             <section>
                 <h2>Limitações e trabalhos futuros</h2>
                 <div class="duas-colunas">
@@ -672,11 +674,11 @@
                 </div>
             </section>
 
-            <!-- 17. Conclusão -->
+            
             <section>
                 <h2>Conclusão</h2>
                 <p>A automatização do gerenciamento de dispositivos PCI melhora a operação e o provisionamento no
-                    Apache CloudStack:</p>
+                    Apache CloudStack</p>
                 <ul>
                     <li class="fragment">elimina a configuração manual a cada início da VM</li>
                     <li class="fragment">centraliza o controle da alocação</li>
@@ -686,10 +688,9 @@
                 <small class="nota fragment">Conclusão limitada ao ambiente em que a solução foi validada.</small>
             </section>
 
-            <!-- 18. Encerramento -->
+            
             <section class="centro">
                 <h1>Obrigado!</h1>
-                <p>Dúvidas?</p>
                 <br>
                 <p><small>Erik Böck da Silva<br>erik.bock@outlook.com</small></p>
                 <div style="margin-top: 50px;">
@@ -729,7 +730,6 @@
             Reveal.addEventListener('slidechanged', updateProgress);
         });
 
-        // No PDF (?print-pdf) a barra fixa não acompanha os slides: cada página recebe a sua, com o progresso dela
         function addPdfBars() {
             const pages = document.querySelectorAll('.pdf-page');
             pages.forEach((page, i) => {
