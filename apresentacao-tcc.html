@@ -286,8 +286,8 @@
             flex: 1;
         }
 
-        .evidencias figcaption {
-            font-size: 0.5em;
+        .legenda-imagem {
+            font-size: 0.7em;
             color: #666;
             text-align: center;
             margin-top: 4px;
@@ -300,12 +300,9 @@
             border: 1px solid #ccc;
         }
 
-        .evidencias figcaption {
-            font-size: 0.6em;
-        }
-
         .evidencia-fullscreen {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
@@ -594,33 +591,19 @@
             </section>
 
             <section>
-                <h2>Evidências do repasse   </h2>
-                <div class="evidencias">
-                    <figure>
-                        <img src="img/fig-host-devices.png" alt="Tela Host devices management com a GPU alocada"
-                            onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-host-devices.png'}))">
-                        <figcaption>Tela de dispositivos do ACS - GPU alocada a uma VM</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="img/fig-lspci-vm.png" alt="Dispositivos PCI vistos pela VM (lspci)"
-                            onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-lspci-vm.png'}))">
-                        <figcaption>Dispositivos PCI vistos de dentro da VM (<code>lspci -nn</code>)</figcaption>
-                    </figure>
-                </div>
+                <figure class="evidencia-fullscreen">
+                    <img src="img/fig-host-devices.png" alt="Tela Host devices management com a GPU alocada" width="960" height="600"
+                    onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-host-devices.png'}))">
+                    <figcaption class="legenda-imagem">Tela de dispositivos do ACS - GPU alocada a uma VM</figcaption>
+                </figure>
             </section>
 
             <section>
-                <div class="evidencia-fullscreen">
-                    <img src="img/fig-host-devices.png" alt="Tela Host devices management com a GPU alocada" width="1080" height="681"
+                <figure class="evidencia-fullscreen">
+                    <img src="img/fig-lspci-vm.png" alt="Tela Host devices management com a GPU alocada" width="800" height="600"
                     onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-host-devices.png'}))">
-                </div>
-            </section>
-
-            <section>
-                <div class="evidencia-fullscreen">
-                    <img src="img/fig-lspci-vm.png" alt="Tela Host devices management com a GPU alocada" width="1080" height="681"
-                    onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'img-pendente',textContent:'Imagem pendente: img/fig-host-devices.png'}))">
-                </div>
+                    <figcaption class="legenda-imagem">Dispositivos PCI vistos de dentro da VM (<code>lspci -nn</code>)</figcaption>
+                </figure>
             </section>
 
             <section>

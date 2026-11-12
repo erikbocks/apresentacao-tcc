@@ -92,32 +92,32 @@
     </mxGraphModel>
   </diagram>
   <diagram name="ciclo-de-vida-dispositivo" id="cv">
-    <mxGraphModel dx="1373" dy="792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" math="0" shadow="0">
+    <mxGraphModel dx="1450" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" math="0" shadow="0">
       <root>
         <mxCell id="cv-0" />
         <mxCell id="cv-1" parent="cv-0" />
         <mxCell id="cv-3" parent="cv-1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=28;fontColor=#000000;fontStyle=1;" value="Ciclo de vida do dispositivo PCI" vertex="1">
           <mxGeometry height="50" width="1200" x="40" y="20" as="geometry" />
         </mxCell>
-        <mxCell id="cv-4" parent="cv-1" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start;fillColor=#00B900;fontColor=#000000;strokeColor=#000000;fontSize=13;" value="Mapeamento" vertex="1">
+        <mxCell id="cv-4" parent="cv-1" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start;fillColor=#00B900;fontColor=#FFFFFF;strokeColor=#000000;fontSize=13;fontStyle=1" value="Mapeamento" vertex="1">
           <mxGeometry height="40" width="100" x="40" y="335" as="geometry" />
         </mxCell>
-        <mxCell id="cv-5" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=20;fontStyle=1;" value="Disabled&lt;br&gt;(desabilitado)" vertex="1">
+        <mxCell id="cv-5" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=20;fontStyle=1;" value="Disabled&lt;br&gt;(desabilitado)" vertex="1">
           <mxGeometry height="70" width="200" x="180" y="320" as="geometry" />
         </mxCell>
-        <mxCell id="cv-6" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=20;fontStyle=1;" value="Free&lt;br&gt;(livre)" vertex="1">
+        <mxCell id="cv-6" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=20;fontStyle=1;" value="Free&lt;br&gt;(livre)" vertex="1">
           <mxGeometry height="70" width="200" x="540" y="320" as="geometry" />
         </mxCell>
-        <mxCell id="cv-7" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=20;fontStyle=1;" value="Attached&lt;br&gt;(alocado a uma VM)" vertex="1">
+        <mxCell id="cv-7" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=20;fontStyle=1;" value="Attached&lt;br&gt;(alocado a uma VM)" vertex="1">
           <mxGeometry height="70" width="200" x="900" y="320" as="geometry" />
         </mxCell>
-        <mxCell id="cv-8" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#aeb6bd;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Missing&lt;br&gt;(não encontrado)" vertex="1">
+        <mxCell id="cv-8" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#6D7276;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Missing&lt;br&gt;(não encontrado)" vertex="1">
           <mxGeometry height="70" width="200" x="540" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="cv-9" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#aeb6bd;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=15;fontStyle=1;" value="HostInMaintenance&lt;br&gt;(servidor em manutenção)" vertex="1">
+        <mxCell id="cv-9" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#6D7276;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=15;fontStyle=1;" value="HostInMaintenance&lt;br&gt;(servidor em manutenção)" vertex="1">
           <mxGeometry height="70" width="220" x="340" y="540" as="geometry" />
         </mxCell>
-        <mxCell id="cv-10" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#aeb6bd;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="NeedsCleanup&lt;br&gt;(aguarda limpeza)" vertex="1">
+        <mxCell id="cv-10" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#6D7276;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="NeedsCleanup&lt;br&gt;(aguarda limpeza)" vertex="1">
           <mxGeometry height="70" width="200" x="900" y="540" as="geometry" />
         </mxCell>
         <mxCell id="cv-11" edge="1" parent="cv-1" source="cv-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="cv-5" value="">
@@ -218,7 +218,7 @@
         <mxCell id="cv-35" parent="cv-1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#000000;" value="Caminho principal" vertex="1">
           <mxGeometry height="36" width="190" x="74" y="661" as="geometry" />
         </mxCell>
-        <mxCell id="cv-36" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#aeb6bd;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;" value="" vertex="1">
+        <mxCell id="cv-36" parent="cv-1" style="whiteSpace=wrap;html=1;fillColor=#6D7276;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;" value="" vertex="1">
           <mxGeometry height="28" width="28" x="270" y="665" as="geometry" />
         </mxCell>
         <mxCell id="cv-37" parent="cv-1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#000000;" value="Estados secundários" vertex="1">
@@ -234,7 +234,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="integracao-ciclo-de-vida" id="ic">
-    <mxGraphModel dx="1812" dy="1045" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" math="0" shadow="0">
+    <mxGraphModel dx="1450" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="720" math="0" shadow="0">
       <root>
         <mxCell id="ic-0" />
         <mxCell id="ic-1" parent="ic-0" />
@@ -242,85 +242,88 @@
           <mxGeometry height="50" width="1200" x="40" y="15" as="geometry" />
         </mxCell>
         <mxCell id="ic-4" parent="ic-1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=20;fontColor=#000000;fontStyle=1;" value="Operação" vertex="1">
-          <mxGeometry height="36" width="440" x="40" y="70" as="geometry" />
+          <mxGeometry height="36" width="440" x="40" y="98" as="geometry" />
         </mxCell>
         <mxCell id="ic-5" parent="ic-1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=20;fontColor=#000000;fontStyle=1;" value="Comportamento com dispositivos" vertex="1">
-          <mxGeometry height="36" width="440" x="800" y="70" as="geometry" />
+          <mxGeometry height="36" width="440" x="800" y="98" as="geometry" />
         </mxCell>
-        <mxCell id="ic-6" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Iniciar a VM" vertex="1">
-          <mxGeometry height="56" width="440" x="40" y="118" as="geometry" />
+        <mxCell id="ic-6" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Iniciar a VM" vertex="1">
+          <mxGeometry height="56" width="440" x="40" y="146" as="geometry" />
         </mxCell>
-        <mxCell id="ic-7" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;" value="Reserva o dispositivo no servidor escolhido" vertex="1">
-          <mxGeometry height="56" width="440" x="800" y="118" as="geometry" />
+        <mxCell id="ic-7" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1" value="Reserva o dispositivo no servidor escolhido" vertex="1">
+          <mxGeometry height="56" width="440" x="800" y="146" as="geometry" />
         </mxCell>
-        <mxCell id="ic-8" edge="1" parent="ic-1" source="ic-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ic-7" value="">
+        <mxCell id="ic-8" edge="1" parent="ic-1" source="ic-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FFFFFF;fontStyle=1" target="ic-7" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ic-9" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Parar a VM" vertex="1">
-          <mxGeometry height="56" width="440" x="40" y="188" as="geometry" />
+        <mxCell id="ic-9" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Parar a VM" vertex="1">
+          <mxGeometry height="56" width="440" x="40" y="216" as="geometry" />
         </mxCell>
-        <mxCell id="ic-10" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;" value="Mantém o dispositivo reservado à VM" vertex="1">
-          <mxGeometry height="56" width="440" x="800" y="188" as="geometry" />
+        <mxCell id="ic-10" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1" value="Mantém o dispositivo reservado à VM" vertex="1">
+          <mxGeometry height="56" width="440" x="800" y="216" as="geometry" />
         </mxCell>
-        <mxCell id="ic-11" edge="1" parent="ic-1" source="ic-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ic-10" value="">
+        <mxCell id="ic-11" edge="1" parent="ic-1" source="ic-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FFFFFF;fontStyle=1" target="ic-10" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ic-12" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Destruir a VM ou remover a oferta" vertex="1">
-          <mxGeometry height="56" width="440" x="40" y="258" as="geometry" />
+        <mxCell id="ic-12" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Destruir a VM ou remover a oferta" vertex="1">
+          <mxGeometry height="56" width="440" x="40" y="286" as="geometry" />
         </mxCell>
-        <mxCell id="ic-13" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;" value="Libera o dispositivo (vai para Free ou NeedsCleanup)" vertex="1">
-          <mxGeometry height="56" width="440" x="800" y="258" as="geometry" />
+        <mxCell id="ic-13" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1" value="Libera o dispositivo (vai para Free ou NeedsCleanup)" vertex="1">
+          <mxGeometry height="56" width="440" x="800" y="286" as="geometry" />
         </mxCell>
-        <mxCell id="ic-14" edge="1" parent="ic-1" source="ic-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ic-13" value="">
+        <mxCell id="ic-14" edge="1" parent="ic-1" source="ic-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FFFFFF;fontStyle=1" target="ic-13" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ic-15" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Migrar, escalonamento com migração ou DRS de VM com oferta de dispositivo" vertex="1">
-          <mxGeometry height="56" width="440" x="40" y="398" as="geometry" />
+        <mxCell id="ic-15" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Migrar¹ VM com oferta de dispositivo" vertex="1">
+          <mxGeometry height="56" width="440" x="40" y="426" as="geometry" />
         </mxCell>
-        <mxCell id="ic-16" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=none;fontColor=#ffffff;dashed=0;horizontal=1;fontSize=18;" value="Operação bloqueada, o dispositivo não pode acompanhar a VM" vertex="1">
-          <mxGeometry height="56" width="440" x="800" y="398" as="geometry" />
+        <mxCell id="ic-16" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1" value="Operação bloqueada, o dispositivo não pode acompanhar a VM" vertex="1">
+          <mxGeometry height="56" width="440" x="800" y="426" as="geometry" />
         </mxCell>
-        <mxCell id="ic-17" edge="1" parent="ic-1" source="ic-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ic-16" value="">
+        <mxCell id="ic-17" edge="1" parent="ic-1" source="ic-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FFFFFF;fontStyle=1" target="ic-16" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ic-18" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="HA de servidor (VM com oferta de dispositivo)" vertex="1">
-          <mxGeometry height="56" width="440" x="40" y="468" as="geometry" />
+        <mxCell id="ic-18" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="HA de servidor (VM com oferta de dispositivo)" vertex="1">
+          <mxGeometry height="56" width="440" x="40" y="496" as="geometry" />
         </mxCell>
-        <mxCell id="ic-19" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=none;fontColor=#ffffff;dashed=0;horizontal=1;fontSize=18;" value="VM não reinicia em outro servidor" vertex="1">
-          <mxGeometry height="56" width="440" x="800" y="468" as="geometry" />
+        <mxCell id="ic-19" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1" value="VM não reinicia em outro servidor" vertex="1">
+          <mxGeometry height="56" width="440" x="800" y="496" as="geometry" />
         </mxCell>
-        <mxCell id="ic-20" edge="1" parent="ic-1" source="ic-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ic-19" value="">
+        <mxCell id="ic-20" edge="1" parent="ic-1" source="ic-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FFFFFF;fontStyle=1" target="ic-19" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ic-21" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Modo de manutenção do servidor" vertex="1">
-          <mxGeometry height="56" width="440" x="40" y="538" as="geometry" />
+        <mxCell id="ic-21" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Modo de manutenção do servidor" vertex="1">
+          <mxGeometry height="56" width="440" x="40" y="566" as="geometry" />
         </mxCell>
-        <mxCell id="ic-22" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=none;fontColor=#ffffff;dashed=0;horizontal=1;fontSize=18;" value="Bloqueado se houver dispositivos alocados" vertex="1">
-          <mxGeometry height="56" width="440" x="800" y="538" as="geometry" />
+        <mxCell id="ic-22" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1" value="Bloqueado se houver dispositivos alocados" vertex="1">
+          <mxGeometry height="56" width="440" x="800" y="566" as="geometry" />
         </mxCell>
-        <mxCell id="ic-23" edge="1" parent="ic-1" source="ic-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ic-22" value="">
+        <mxCell id="ic-23" edge="1" parent="ic-1" source="ic-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FFFFFF;fontStyle=1" target="ic-22" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ic-27" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;" value="" vertex="1">
-          <mxGeometry height="28" width="28" x="507" y="664" as="geometry" />
+          <mxGeometry height="28" width="28" x="886.5" y="664" as="geometry" />
         </mxCell>
         <mxCell id="ic-28" parent="ic-1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#000000;" value="Suportado" vertex="1">
-          <mxGeometry height="36" width="93" x="541" y="660" as="geometry" />
+          <mxGeometry height="36" width="93" x="920.5" y="660" as="geometry" />
         </mxCell>
         <mxCell id="ic-29" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;" value="" vertex="1">
-          <mxGeometry height="28" width="28" x="637" y="664" as="geometry" />
+          <mxGeometry height="28" width="28" x="1016.5" y="664" as="geometry" />
         </mxCell>
         <mxCell id="ic-30" parent="ic-1" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=16;fontColor=#000000;" value="Bloqueado" vertex="1">
-          <mxGeometry height="36" width="103" x="671" y="660" as="geometry" />
+          <mxGeometry height="36" width="103" x="1050.5" y="660" as="geometry" />
         </mxCell>
-        <mxCell id="ic-33" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Migrar VM sem oferta de dispositivo" vertex="1">
-          <mxGeometry height="56" width="440" x="40" y="328" as="geometry" />
+        <mxCell id="ic-33" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1;" value="Migrar¹ VM sem oferta de dispositivo" vertex="1">
+          <mxGeometry height="56" width="440" x="40" y="356" as="geometry" />
         </mxCell>
-        <mxCell id="ic-34" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=none;fontColor=#000000;dashed=0;horizontal=1;fontSize=18;" value="Migração permitida normalmente" vertex="1">
-          <mxGeometry height="56" width="440" x="800" y="328" as="geometry" />
+        <mxCell id="ic-34" parent="ic-1" style="whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=none;fontColor=#FFFFFF;dashed=0;horizontal=1;fontSize=18;fontStyle=1" value="Migração permitida normalmente" vertex="1">
+          <mxGeometry height="56" width="440" x="800" y="356" as="geometry" />
         </mxCell>
-        <mxCell id="ic-35" edge="1" parent="ic-1" source="ic-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ic-34" value="">
+        <mxCell id="ic-35" edge="1" parent="ic-1" source="ic-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FFFFFF;fontStyle=1" target="ic-34" value="">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sq2dd5sqaOcaHSfmhUW1-0" parent="ic-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Migrar também engloba escalonamento com migração e o DRS" vertex="1">
+          <mxGeometry height="30" width="366.5" x="40" y="666" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
